@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
     def new
 
     end
@@ -12,10 +11,11 @@ class SessionsController < ApplicationController
       else
         redirect_to '/login'
       end
-     end
-    def destroy
+   end
+  
+   def destroy
 	  session[:user_id] = nil
 	  redirect_to root_path
-	end
+   end
 
 end
