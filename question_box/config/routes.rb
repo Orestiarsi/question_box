@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+	resources :answers, only: [:new, :create, :show, :update, :destroy]
 
-  resources :questions, only: [:show, :new, :create]
+  resources :questions
   root to: "questions#index"
 
   get 'posts/index'
@@ -8,7 +9,6 @@ Rails.application.routes.draw do
   get 'posts/show'
 
   get '/login' => 'users#new'
-
 
   get 'tags/new'
 
@@ -19,16 +19,6 @@ Rails.application.routes.draw do
   get 'tags/update']
 
   get 'tags/destroy'
-
-  get 'answers/new'
-
-  get 'answers/create'
-
-  get 'answers/show'
-
-  get 'answers/update'
-
-  get 'answers/destroy'
 
   get 'users/new'
 

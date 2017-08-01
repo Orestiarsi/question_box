@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20170731172532) do
 
-
-ActiveRecord::Schema.define(version: 20170731195453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,18 +20,13 @@ ActiveRecord::Schema.define(version: 20170731195453) do
     t.text "content"
     t.bigint "question_id"
     t.integer "rating"
-
     t.boolean "correct"
     t.bigint "tag_id"
-
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
-
     t.index ["tag_id"], name: "index_answers_on_tag_id"
-
-
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
@@ -41,12 +35,10 @@ ActiveRecord::Schema.define(version: 20170731195453) do
     t.string "title"
     t.text "content"
     t.integer "rating"
-
     t.bigint "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tag_id"], name: "index_questions_on_tag_id"
-
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
@@ -65,11 +57,8 @@ ActiveRecord::Schema.define(version: 20170731195453) do
   end
 
   add_foreign_key "answers", "questions"
-
   add_foreign_key "answers", "tags"
   add_foreign_key "answers", "users"
   add_foreign_key "questions", "tags"
-
-
   add_foreign_key "questions", "users"
 end
