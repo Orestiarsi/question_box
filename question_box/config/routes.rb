@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+	resources :answers, only: [:new, :create, :show, :update, :destroy]
+	
   get 'tags/new'
 
   get 'tags/index'
@@ -8,16 +10,6 @@ Rails.application.routes.draw do
   get 'tags/update'
 
   get 'tags/destroy'
-
-  get 'answers/new'
-
-  get 'answers/create'
-
-  get 'answers/show'
-
-  get 'answers/update'
-
-  get 'answers/destroy'
 
   get 'questions/new'
 
