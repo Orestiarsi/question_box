@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/login' => 'users#new'
+
   get 'tags/new'
 
   get 'tags/index'
@@ -39,5 +41,7 @@ Rails.application.routes.draw do
 
   get 'users/destroy'
 
+root to: 'questions#index'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
