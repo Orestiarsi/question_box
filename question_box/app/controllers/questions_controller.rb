@@ -1,4 +1,7 @@
 class QuestionsController < ApplicationController
+  def index
+    @questions = Question.page(params[:page]).per(5)
+  end
   def new
   end
 
@@ -6,6 +9,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @questions = Question.page(params[:page]).per(15)
   end
 
   def update
