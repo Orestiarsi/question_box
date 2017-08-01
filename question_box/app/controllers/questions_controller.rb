@@ -1,12 +1,9 @@
 class QuestionsController < ApplicationController
-   def index
-    @questions = Question.order("published_at DESC")
-   end
 
-   def show
-    @question = Question.find(params[:id])
-   end
-
+  def index
+    @questions = Question.page(params[:page]).per(5)
+  end
+  
   def new
    @question = Question.new
   end
@@ -22,7 +19,9 @@ class QuestionsController < ApplicationController
   end
 
   def show
-   @question = Question.find(params[:id])
+
+    @questions = Question.page(params[:page]).per(15)
+
   end
 
   def update
