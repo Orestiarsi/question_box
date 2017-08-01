@@ -1,5 +1,7 @@
+
 module ApplicationHelper
 	def markdown(text)
+
     options = {
       filter_html:     true,
       hard_wrap:       true,
