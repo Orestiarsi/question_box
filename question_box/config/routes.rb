@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get 'tags/show'
 
-  get 'tags/update']
+  get 'tags/update'
 
   get 'tags/destroy'
 
