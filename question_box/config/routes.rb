@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+
+  resources :questions, only: [:show, :new, :create]
+  root to: "questions#index"
+
+  get 'posts/index'
+
+  get 'posts/show'
+
   get '/login' => 'users#new'
+
 
   get 'tags/new'
 
@@ -21,16 +30,6 @@ Rails.application.routes.draw do
 
   get 'answers/destroy'
 
-  get 'questions/new'
-
-  get 'questions/create'
-
-  get 'questions/show'
-
-  get 'questions/update'
-
-  get 'questions/destroy'
-
   get 'users/new'
 
   get 'users/create'
@@ -41,7 +40,9 @@ Rails.application.routes.draw do
 
   get 'users/destroy'
 
+
 root to: 'questions#index'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end
